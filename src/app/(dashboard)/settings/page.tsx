@@ -161,7 +161,7 @@ export default function SettingsPage() {
 
         <CardContent className="p-5 space-y-3 text-xs">
           <p className="text-muted-foreground leading-relaxed">
-            Learning OS uses an internal AI provider abstraction. The application routes quiz generation, semantic evaluations, and concept simplifications through sanitized boundaries (<code>&lt;untrusted_material_content&gt;</code>) to prevent prompt injection.
+            Learan OS uses an internal AI provider abstraction. The application routes quiz generation, semantic evaluations, and concept simplifications through sanitized boundaries (<code>&lt;untrusted_material_content&gt;</code>) to prevent prompt injection.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-3 pt-1">

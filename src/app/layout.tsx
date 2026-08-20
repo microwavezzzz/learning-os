@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Learning OS - Personal Learning Management System",
+  title: "Learan OS - Personal Learning Management System",
   description:
     "A production-grade Personal Learning Management System that connects materials, planning, focus sessions, active recall, mistakes, and mastery.",
 };

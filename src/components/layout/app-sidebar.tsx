@@ -134,7 +134,7 @@ export function AppSidebar({
                   LearnSphere
                 </span>
                 <span className="text-[10px] text-muted-foreground font-medium mt-1">
-                  BMSD Learning OS
+                  BMSD Learan OS
                 </span>
               </div>
             </Link>

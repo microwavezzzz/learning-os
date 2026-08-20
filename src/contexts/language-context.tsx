@@ -20,7 +20,7 @@ const LanguageContext = React.createContext<LanguageContextValue>({
 const translations: Record<Language, Record<string, string>> = {
   id: {
     // App Brand
-    "app.name": "Learning OS",
+    "app.name": "Learan OS",
     "app.subtitle": "Personal LMS",
 
     // Sidebar Groups
@@ -243,7 +243,7 @@ const translations: Record<Language, Record<string, string>> = {
     "settings.drive_source": "Sumber Belajar Google Drive",
     "settings.connected_readonly": "Terhubung (Hanya Baca)",
     "settings.folder_id": "ID Folder:",
-    "settings.drive_description": "Learning OS hanya menggunakan izin baca drive.file. Dokumen diproses dan diindeks secara lokal tanpa mengubah atau menghapus berkas di Google Drive Anda.",
+    "settings.drive_description": "Learan OS hanya menggunakan izin baca drive.file. Dokumen diproses dan diindeks secara lokal tanpa mengubah atau menghapus berkas di Google Drive Anda.",
     "settings.view_drive": "Lihat Folder Sumber di Drive",
     "settings.ai_router": "AI Gateway & Pengarah Model",
     "settings.prompt_guard": "Perlindungan Prompt Aktif",
@@ -300,7 +300,7 @@ const translations: Record<Language, Record<string, string>> = {
 
   en: {
     // App Brand
-    "app.name": "Learning OS",
+    "app.name": "Learan OS",
     "app.subtitle": "Personal LMS",
 
     // Sidebar Groups
@@ -523,7 +523,7 @@ const translations: Record<Language, Record<string, string>> = {
     "settings.drive_source": "Google Drive Learning Source",
     "settings.connected_readonly": "Connected (Read-Only)",
     "settings.folder_id": "Folder ID:",
-    "settings.drive_description": "Learning OS operates strictly with drive.file read-only permissions. Documents are parsed and indexed locally without modifying or deleting files in your Google Drive.",
+    "settings.drive_description": "Learan OS operates strictly with drive.file read-only permissions. Documents are parsed and indexed locally without modifying or deleting files in your Google Drive.",
     "settings.view_drive": "View Source Folder in Drive",
     "settings.ai_router": "AI Gateway & Model Router",
     "settings.prompt_guard": "Prompt Guard Active",

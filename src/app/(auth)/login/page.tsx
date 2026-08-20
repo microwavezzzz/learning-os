@@ -74,7 +74,7 @@ export default function LoginPage() {
           <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center font-bold shadow-md">
             <GraduationCap className="h-6 w-6" />
           </div>
-          <h1 className="text-2xl font-bold tracking-tight">Learning OS</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Learan OS</h1>
           <p className="text-sm text-muted-foreground max-w-xs">
             Personal Learning Management System with active recall, mistake tracking, and mastery curves.
           </p>
