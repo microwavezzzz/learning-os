@@ -9,10 +9,15 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { isSupabaseConfigured } from "@/lib/auth/supabase";
 
 export default function LoginPage() {
-  const { loginWithGoogle, loginWithEmail, loginAsDemoUser, isAuthenticated } = useAuth();
+  const { loginWithGoogle, loginWithEmail, registerWithEmail, loginAsDemoUser, isAuthenticated, authError } = useAuth();
   const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [isRegistering, setIsRegistering] = React.useState(false);
+  const [message, setMessage] = React.useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const router = useRouter();
 
@@ -26,14 +31,29 @@ export default function LoginPage() {
     e.preventDefault();
     if (!email) return;
     setIsSubmitting(true);
-    await loginWithEmail(email);
-    router.push("/dashboard");
+    try {
+      if (isRegistering) {
+        await registerWithEmail(email, password, name || email.split("@")[0]);
+        setMessage("Akun berhasil dibuat. Periksa email Anda untuk konfirmasi jika diminta.");
+        if (isAuthenticated) router.push("/dashboard");
+      } else {
+        await loginWithEmail(email, password);
+        router.push("/dashboard");
+      }
+    } catch {
+      // Error is exposed by AuthProvider.
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleGoogleLogin = async () => {
     setIsSubmitting(true);
-    await loginWithGoogle();
-    router.push("/dashboard");
+    try {
+      await loginWithGoogle();
+    } catch {
+      setIsSubmitting(false);
+    }
   };
 
   const handleDemoLogin = () => {
@@ -64,22 +84,39 @@ export default function LoginPage() {
         <Card className="border-border/80 shadow-xl backdrop-blur-sm bg-card/80">
           <CardHeader className="space-y-1 pb-4">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-xl">Sign in</CardTitle>
+              <CardTitle className="text-xl">{isRegistering ? "Create account" : "Sign in"}</CardTitle>
               <Badge variant="outline" className="text-xs font-normal">
-                Phase 1 Auth
+                {isSupabaseConfigured ? "Supabase Auth" : "Demo mode"}
               </Badge>
             </div>
             <CardDescription>
-              Choose your preferred method to access your learning workspace
+              {isSupabaseConfigured ? "Use your account to access your learning workspace" : "Configure Supabase to enable real accounts"}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {/* Google OAuth button */}
+            {!isSupabaseConfigured && (
+              <div className="rounded-md border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-700 dark:text-amber-300">
+                Supabase belum dikonfigurasi. Mode akun nyata belum aktif.
+              </div>
+            )}
+
+            {isRegistering && (
+              <Input
+                type="text"
+                placeholder="Nama Anda"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                disabled={isSubmitting}
+                className="h-10"
+              />
+            )}
+
             <Button
               variant="outline"
               type="button"
               onClick={handleGoogleLogin}
-              disabled={isSubmitting}
+              disabled={isSubmitting || !isSupabaseConfigured}
               className="w-full flex items-center justify-center gap-2 h-10 hover:bg-accent font-medium"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24">
@@ -100,7 +137,7 @@ export default function LoginPage() {
                   d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
                 />
               </svg>
-              <span>Continue with Google</span>
+                  <span>Continue with Google</span>
             </Button>
 
             <div className="relative">
@@ -125,14 +162,43 @@ export default function LoginPage() {
                 disabled={isSubmitting}
                 className="h-10"
               />
+              <Input
+                type="password"
+                placeholder="Password (minimal 6 karakter)"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={6}
+                disabled={isSubmitting || !isSupabaseConfigured}
+                className="h-10"
+              />
               <Button type="submit" disabled={isSubmitting} className="w-full h-10 font-medium">
-                <span>Sign in with Email</span>
+                <span>{isRegistering ? "Create account" : "Sign in with Email"}</span>
                 <ArrowRight className="h-4 w-4 ml-1" />
               </Button>
             </form>
           </CardContent>
 
+          {(authError || message) && (
+            <div className={`mx-6 mb-4 rounded-md p-3 text-xs ${authError ? "bg-destructive/10 text-destructive" : "bg-emerald-500/10 text-emerald-700"}`}>
+              {authError || message}
+            </div>
+          )}
+
           <CardFooter className="flex flex-col gap-3 pt-2 border-t">
+            <Button
+              variant="ghost"
+              type="button"
+              onClick={() => {
+                setIsRegistering((value) => !value);
+                setMessage(null);
+              }}
+              disabled={!isSupabaseConfigured || isSubmitting}
+              className="text-xs"
+            >
+              {isRegistering ? "Sudah punya akun? Masuk" : "Belum punya akun? Daftar"}
+            </Button>
+
             {/* Quick 1-Click Demo Mode button */}
             <Button
               variant="secondary"
