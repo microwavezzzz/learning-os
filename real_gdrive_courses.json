@@ -1,0 +1,236 @@
+[
+  {
+    "parent": "Semester 1 (TPB)",
+    "id": "1sBXmsPauQkaqxrSZ_WZ5NauNss7a7gM3",
+    "title": "Bahasa Indonesia",
+    "status": 200
+  },
+  {
+    "parent": "Semester 1 (TPB)",
+    "id": "10qpfPxeJIWAC6G0k0BsBDv9qJnmJLuR1",
+    "title": "Biologi Dasar",
+    "status": 200
+  },
+  {
+    "parent": "Semester 1 (TPB)",
+    "id": "1oiIQfPprxBnCDnR9Uo3o6MSyyR-zWYBW",
+    "title": "Fisika Dasar",
+    "status": 200
+  },
+  {
+    "parent": "Semester 1 (TPB)",
+    "id": "1HZbz0QPahpwm1W6NnWpodEH4RH6a1Qtw",
+    "title": "Kimia Dasar",
+    "status": 200
+  },
+  {
+    "parent": "Semester 1 (TPB)",
+    "id": "1G8Uh4XNUk7HTUJI3KSbKJPpgfFyB-h74",
+    "title": "Matematika Dasar",
+    "status": 200
+  },
+  {
+    "parent": "Semester 1 (TPB)",
+    "id": "1x-qstFT--Al3_tG7nTXdPgaFHkFK81Yz",
+    "title": "PKS",
+    "status": 200
+  },
+  {
+    "parent": "Semester 2 (TPB)",
+    "id": "1kyf6CgiAWrmHjgj5pVf9m6mw4OZ0976l",
+    "title": "Bahasa Inggris",
+    "status": 200
+  },
+  {
+    "parent": "Semester 2 (TPB)",
+    "id": "1ciMoJdN680LzchOlckW5eDFp9tgkn210",
+    "title": "Fisika Dasar 2",
+    "status": 200
+  },
+  {
+    "parent": "Semester 2 (TPB)",
+    "id": "1kFQ4fIVybnaLqrQoxHcDxBQhl0X4_iPh",
+    "title": "Kimia Dasar 2",
+    "status": 200
+  },
+  {
+    "parent": "Semester 2 (TPB)",
+    "id": "1YStDOk7zfTmCLFSMBKyOSW1G1knsbLxm",
+    "title": "LHS",
+    "status": 200
+  },
+  {
+    "parent": "Semester 2 (TPB)",
+    "id": "18ZjUmafiifSfuP7VeYdJrq2QNJ57BvUJ",
+    "title": "Matemarika Dasar 2",
+    "status": 200
+  },
+  {
+    "parent": "Semester 2 (TPB)",
+    "id": "1Gx3_jWZEzCrbjCK1WPAG5ZgkIUHlyYBm",
+    "title": "Olahraga",
+    "status": 200
+  },
+  {
+    "parent": "Semester 2 (TPB)",
+    "id": "1nYlM_PUBKnTONw3CPFPl53HZexWpQ4o_",
+    "title": "PKS 2",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1VMgmybYUGRlpQi38fn1ySfunJa1sUB3Q",
+    "title": "Algoritma Pemrograman",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1-ANdqDPHgifFnF3lfmsuDC7HrHwXzdc6",
+    "title": "Algoritma Strategi",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1H5TAiBcnT5y0VSsQJIUFWEpa2mWavCUm",
+    "title": "Aljabar Linier Elementer",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1JmWnXXFQENSK8ZkIWZNaHU3FhbTMmrYx",
+    "title": "Analisis Data Statistik",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1H3_A1gflSv4Kz9Z0R267II_ZPgun-pKx",
+    "title": "Analisis Multivariat",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1kWqQtkmgAAEQ9urD_btDd6co7T_nDnNP",
+    "title": "Analitik Bisnis terbaru25/26",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1O9_5rPyf993Q0WIKYCPJaaLX30Gr9N1U",
+    "title": "Basis Data",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "14FxjVo52mViDqIDWr64tVjqbhXFN6j-d",
+    "title": "Data Mining",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1q3ymVEbQZ2ND5PexdQNN3WBYP8VdZMqR",
+    "title": "Deep Learning",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1fjHlsAbnJ4iU9RleulqeRn9xNdDGS39s",
+    "title": "Keamanan dan Data Privasi",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1YS2a3ZRy3V0QnflgIM8XixFIx1hWbGYI",
+    "title": "Kecerdasan Buatan",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1saJ-scM_6fHuI4NuQgxo6SZvg75K-sqP",
+    "title": "Komputasi Statistik",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "18VV9FtOnKuxkUe7INBfbT_0CiecT8jFc",
+    "title": "Logika dan Matematika Diskrit",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1tSBWnMSKrTTXJjLn6CWKdMH0xjYxAXb8",
+    "title": "Metode Numerik",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1PEAk0JbWm4XVhoG7cedQOXBDsGw-hJRN",
+    "title": "Metode Penelitian",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1EFAMP2mS8rbQi0ouBeFGDqPKnezqMYUD",
+    "title": "Pembelajaran Mesin",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "14wFr15Wj7wDZp5YDdH1JwFQxZFl7xbiL",
+    "title": "Pemrograman Berbasis Fungsi ",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1-XPUR1rBgmWiLG7BgP5KAGJttMSdgTf8",
+    "title": "Pergudangan Data",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1V2SkKgplkyQ_UDhy5AXdUbnXvgPTgx2K",
+    "title": "Proses Stokastik",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1VGQoo1jupGnLYHANeY40SKDtLr5HmvH6",
+    "title": "Rancangan Percobaan",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1ZZKTdeQu8IGIICOY6h2murlWdOgoD2e6",
+    "title": "Statistika Sains Data",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1Qn71UuhXZ3hGiYzsZIosn3uW4FqfLpJ8",
+    "title": "Struktur Data",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1eCtmVXaIXLkqEN8HgSDzXYLF4bv78Dg2",
+    "title": "Teknologi Basis Data",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1kyv69sdT1QHizjMUL4HETSEz6r1voqTp",
+    "title": "Teori Optimasi",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "13s7Rv_VA79aOmyAp-z89_HeWZMjngTTL",
+    "title": "Teori Peluang",
+    "status": 200
+  },
+  {
+    "parent": "MK Prodi Wajib",
+    "id": "1XDfL4xkeIMDJrssekT-OR6AHD1tEvyQD",
+    "title": "Visualisasi Data dan Informasi",
+    "status": 200
+  }
+]
