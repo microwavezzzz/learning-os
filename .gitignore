@@ -9,3 +9,5 @@ data/*.db
 data/*.db-*
 .DS_Store
 npm-debug.log*
+.vercel
+.env*
