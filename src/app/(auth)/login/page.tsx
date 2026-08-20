@@ -9,15 +9,10 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
-import { isSupabaseConfigured } from "@/lib/auth/supabase";
 
 export default function LoginPage() {
-  const { loginWithGoogle, loginWithEmail, registerWithEmail, loginAsDemoUser, isAuthenticated, authError } = useAuth();
+  const { loginWithGoogle, loginWithEmail, loginAsDemoUser, isAuthenticated } = useAuth();
   const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [isRegistering, setIsRegistering] = React.useState(false);
-  const [message, setMessage] = React.useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const router = useRouter();
 
@@ -32,16 +27,8 @@ export default function LoginPage() {
     if (!email) return;
     setIsSubmitting(true);
     try {
-      if (isRegistering) {
-        await registerWithEmail(email, password, name || email.split("@")[0]);
-        setMessage("Akun berhasil dibuat. Periksa email Anda untuk konfirmasi jika diminta.");
-        if (isAuthenticated) router.push("/dashboard");
-      } else {
-        await loginWithEmail(email, password);
-        router.push("/dashboard");
-      }
-    } catch {
-      // Error is exposed by AuthProvider.
+      await loginWithEmail(email);
+      router.push("/dashboard");
     } finally {
       setIsSubmitting(false);
     }
@@ -84,39 +71,21 @@ export default function LoginPage() {
         <Card className="border-border/80 shadow-xl backdrop-blur-sm bg-card/80">
           <CardHeader className="space-y-1 pb-4">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-xl">{isRegistering ? "Create account" : "Sign in"}</CardTitle>
+              <CardTitle className="text-xl">Sign in</CardTitle>
               <Badge variant="outline" className="text-xs font-normal">
-                {isSupabaseConfigured ? "Supabase Auth" : "Demo mode"}
+                Demo mode
               </Badge>
             </div>
             <CardDescription>
-              {isSupabaseConfigured ? "Use your account to access your learning workspace" : "Configure Supabase to enable real accounts"}
+              Use your demo profile to access your learning workspace
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {!isSupabaseConfigured && (
-              <div className="rounded-md border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-700 dark:text-amber-300">
-                Supabase belum dikonfigurasi. Mode akun nyata belum aktif.
-              </div>
-            )}
-
-            {isRegistering && (
-              <Input
-                type="text"
-                placeholder="Nama Anda"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                disabled={isSubmitting}
-                className="h-10"
-              />
-            )}
-
             <Button
               variant="outline"
               type="button"
               onClick={handleGoogleLogin}
-              disabled={isSubmitting || !isSupabaseConfigured}
+              disabled={isSubmitting}
               className="w-full flex items-center justify-center gap-2 h-10 hover:bg-accent font-medium"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24">
@@ -162,43 +131,14 @@ export default function LoginPage() {
                 disabled={isSubmitting}
                 className="h-10"
               />
-              <Input
-                type="password"
-                placeholder="Password (minimal 6 karakter)"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-                disabled={isSubmitting || !isSupabaseConfigured}
-                className="h-10"
-              />
               <Button type="submit" disabled={isSubmitting} className="w-full h-10 font-medium">
-                <span>{isRegistering ? "Create account" : "Sign in with Email"}</span>
+                <span>Sign in with Email</span>
                 <ArrowRight className="h-4 w-4 ml-1" />
               </Button>
             </form>
           </CardContent>
 
-          {(authError || message) && (
-            <div className={`mx-6 mb-4 rounded-md p-3 text-xs ${authError ? "bg-destructive/10 text-destructive" : "bg-emerald-500/10 text-emerald-700"}`}>
-              {authError || message}
-            </div>
-          )}
-
           <CardFooter className="flex flex-col gap-3 pt-2 border-t">
-            <Button
-              variant="ghost"
-              type="button"
-              onClick={() => {
-                setIsRegistering((value) => !value);
-                setMessage(null);
-              }}
-              disabled={!isSupabaseConfigured || isSubmitting}
-              className="text-xs"
-            >
-              {isRegistering ? "Sudah punya akun? Masuk" : "Belum punya akun? Daftar"}
-            </Button>
-
             {/* Quick 1-Click Demo Mode button */}
             <Button
               variant="secondary"
